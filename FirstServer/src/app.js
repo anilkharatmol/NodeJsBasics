@@ -23,8 +23,7 @@ app.use("/library-3",(req,res,next)=>{
 
 app.use("/welcome",(req,res,next)=>{
   req.user = "Guest"
-  console.log("In the welcome middleware");
-  
+  console.log("In the welcome middleware");  
   next();
 })
 
@@ -37,7 +36,7 @@ app.get("/library-3",(req,res)=>{
 })
 
 app.get("/welcome",(req,res)=>{
-  res.send(`<h2>${req.user}</h2>`)
+  res.send(`<h2>Welcome,${req.user}</h2>`)
 })
 
 app.listen(PORT, () => {
